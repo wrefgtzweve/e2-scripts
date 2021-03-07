@@ -1,0 +1,22 @@
+@name for loop holo
+@inputs 
+@outputs 
+@persist X:number
+@trigger 
+
+if(first()|clk("lel"))
+{
+    Pos = 2000
+    Height = 50
+    Size = 100
+    timer("lel",1)
+    holoCreate(X,entity():pos()+vec(0,0,Height)+vec(random(-Pos,Pos),random(-Pos,Pos),random(Pos/2,Pos)),vec(random(-Size,Size),random(-Size,Size),random(-Size,Size)),ang(random(0,255),random(0,255),random(0,255)))
+    holoColor(X,vec(random(0,255),random(0,255),random(0,255)))
+    holoDisableShading(X,1)
+    holoModel(X,"models/dog.mdl")
+    X++
+    if(X>450)
+    {
+        X=1
+    }
+}

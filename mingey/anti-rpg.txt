@@ -1,0 +1,42 @@
+@name anti-rpg
+@inputs 
+@outputs 
+@persist Vec:vector RPG:entity Start:vector Block:entity
+@trigger 
+
+if(first())
+{
+    runOnTick(1)
+    Block = entity():isWeldedTo()
+    Block:setMass(10000)
+    Block:propFreeze(0)
+    noCollide(owner(),entity())
+    noCollide(owner(),Block)
+    Start = Block:pos()+vec(0,0,500)
+    
+    findExcludePlayerProps(owner())
+    findIncludeClass("npc_grenade_frag")
+    findIncludeClass("grenade_ar2")
+    findIncludeClass("prop_combine_ball")
+    findIncludeClass("cw_grenade_thrown")
+    findIncludeClass("m9k_thrown_m61")
+    findIncludeClass("ent_ins2rpgrocket")
+}
+
+findInSphere(entity():pos(),100000)
+
+#[findInSphere(entity():pos(),300)
+print(findToArray())]#
+
+if(find())
+{
+    RPG = find()
+    Vec = (RPG:pos()+vec(0,0,0)-Block:pos())*(Block:mass()*100)
+}
+elseif(!find())
+{
+    RPG = find()
+    Vec = (owner():pos()+vec(0,0,200)-Block:pos())*(Block:mass()*10)
+}
+
+Block:applyForce(Vec+$Vec*5)
