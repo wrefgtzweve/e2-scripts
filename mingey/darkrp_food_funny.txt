@@ -1,0 +1,19 @@
+@name 
+@inputs 
+@outputs 
+@persist 
+@trigger 
+
+#findIncludePlayerProps(owner())
+
+findByClass( "prop_physics" )
+foreach( N, Food:entity=findToArray() )
+{
+    Model = Food:model()
+    holoCreate( N, Food:pos() - vec( 0, 0, 1), vec( -1.2, -1.2, -1.2 ), Food:angles() + ang(0,180,180), vec(0,0,0), Model )
+    holoAlpha( N, 255 )
+    holoMaterial( N, "models/debug/debugwhite" )
+    holoParent( N, Food )
+}
+
+

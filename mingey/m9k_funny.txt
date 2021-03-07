@@ -1,0 +1,13 @@
+@name 
+@inputs 
+@outputs 
+@persist 
+@trigger 
+
+runOnTick(1)
+
+Effect = effect()
+Effect:setOrigin(entity():pos())
+Effect:setScale(1)
+Effect:play("m9k_nuke_blastwave")
+selfDestruct()
