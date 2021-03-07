@@ -9,6 +9,7 @@ runOnTick(1000)
 runOnKeys(owner(),1)
 
 if(O:keyUse()){
-concmd("gm_spawn models/props_phx/construct/metal_wire_angle360x2.mdl")
+concmd("gm_spawn models/props_c17/oildrum001_explosive.mdl")
 
 }
+
