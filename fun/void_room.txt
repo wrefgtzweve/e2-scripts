@@ -8,7 +8,7 @@ runOnLast(1)
 
 if (first())
 {
-    Seat = seatSpawn("models/props_c17/door01_left.mdl",entity():pos() + vec(0,-25,50),ang(0),1)
+    Seat = seatSpawn("models/props_c17/door01_left.mdl",entity():pos() + vec(0,-25,50), ang(0), 1)
     Seat2 = seatSpawn("models/props_c17/door01_left.mdl",vec(-9090,-4673,-11081),ang(0),1)
     
     entity():parentTo(Seat)
