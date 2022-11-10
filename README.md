@@ -1,2 +1,1 @@
-# e2-scripts
-Wire e2 scripts i've made while playing garrys mod.
+Moved to https://github.com/wrefgtzweve/starfall-e2-scripts
